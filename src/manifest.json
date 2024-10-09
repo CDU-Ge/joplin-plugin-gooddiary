@@ -6,10 +6,10 @@
     "name": "GoodDiary",
     "description": "Automatically opens your diary for you every day.",
     "author": "Ge",
-    "homepage_url": "",
-    "repository_url": "",
-    "keywords": [],
-    "categories": [],
+    "homepage_url": "https://github.com/CDU-Ge/joplin-plugin-gooddiary",
+    "repository_url": "https://github.com/CDU-Ge/joplin-plugin-gooddiary",
+    "keywords": ["diary", "notes", "automation", "Joplin"],
+    "categories": ["productivity", "note-taking", "automation"],
     "screenshots": [],
     "icons": {}
 }
