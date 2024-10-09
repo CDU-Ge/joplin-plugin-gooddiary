@@ -1,0 +1,15 @@
+{
+	"manifest_version": 1,
+	"id": "cdu.g.diary",
+	"app_min_version": "2.13",
+	"version": "1.0.0",
+	"name": "GoodDiary",
+	"description": "Automatically opens your diary for you every day.",
+	"author": "Ge",
+	"homepage_url": "",
+	"repository_url": "",
+	"keywords": [],
+	"categories": [],
+	"screenshots": [],
+	"icons": {}
+}
