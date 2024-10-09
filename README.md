@@ -1,6 +1,6 @@
 # GoodDiary Plugin
 
-[中文文档](README.zh-CN.md)
+[简体中文文档](README.zh-Hans.md)
 
 GoodDiary is a Joplin plugin that automatically opens your diary for you every day.
 
