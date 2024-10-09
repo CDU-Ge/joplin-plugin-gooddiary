@@ -9,7 +9,7 @@
     "homepage_url": "https://github.com/CDU-Ge/joplin-plugin-gooddiary",
     "repository_url": "https://github.com/CDU-Ge/joplin-plugin-gooddiary",
     "keywords": ["diary", "notes", "automation", "Joplin"],
-    "categories": ["productivity", "note-taking", "automation"],
+    "categories": ["productivity"],
     "screenshots": [],
     "icons": {}
 }
