@@ -52,31 +52,36 @@ joplin.plugins.register({
 			return noteName;
 		}
 
-		function createDailyNote() {
+		async function createDailyNote() {
 			const noteName = getDailyNoteName();
 			const dailyFolderName = getDailyFolderName();
-			console.log(noteName);
+			
 			// check if daily folder exists else create it
-			joplin.data.get(['folders']).then((folderList: any) => {
+		    await joplin.data.get(['folders']).then(async function(folderList: any)  {
 				const dailyFolder = folderList.items.find((folder: any) => folder.title === dailyFolderName);
 				if (!dailyFolder) {
-					joplin.data.post(['folders'], null, { title: dailyFolderName });
+					await joplin.data.post(['folders'], null, { title: dailyFolderName });
 				}
 			});
-			// check if note exists else create it
-			joplin.data.get(['notes']).then((noteList: any) => {
-				const note = noteList.items.find((note: any) => note.title === noteName);
-				if (!note) {
-					joplin.data.post(['notes'], null, { title: noteName, body: 'Hello World!' });
-				}
-			});
+			console.log('createDailyNote', noteName, dailyFolderName);
+			// create daily note
+			const folderList = await joplin.data.get(['folders']);
+			console.log(folderList);
+			const dailyFolder = folderList.items.find((folder: any) => folder.title === dailyFolderName);
+			console.log(dailyFolder.id);
+			const noteList = await joplin.data.get(['folders', dailyFolder.id, 'notes'], null);
+			if (await noteList.items.find((note: any) => note.title === noteName)) {
+				return;
+			}
+			await joplin.data.post(['notes'], null, { title: noteName, body: '', parent_id: dailyFolder.id });
 		}
 		
 		window.cdu = {
 			createDailyNote,
 		}
 		// create daily note
-		createDailyNote();
+		await createDailyNote();
+		// setInterval(createDailyNote, 1000);
 		setInterval(createDailyNote, 1000 * 60 * 60 * 2);
 	},
 });
